@@ -1,39 +1,60 @@
 
-var userChoice = prompt("Do you choose rock, paper or scissors?");
-var computerChoice = Math.random();
-if (computerChoice < 0.34) {
-	computerChoice = "rock";
-} else if(computerChoice <= 0.67) {
-	computerChoice = "paper";
-} else {
-	computerChoice = "scissors";
-} console.log("Computer: " + computerChoice);
+var userChoice = "";
+var computerChoice = "";
+
+var getInputs = function(){
+    
+    userChoice = prompt("Do you choose rock, paper or scissors?");
+
+    computerChoice = Math.random();
+    if (computerChoice < 0.34) {
+        computerChoice = "rock";
+    } else if(computerChoice <= 0.67) {
+        computerChoice = "paper";
+    } else {
+        computerChoice = "scissors";
+    } console.log("Computer: " + computerChoice);
+};
 
 var compare = function(choice1, choice2){
     if(choice1 === choice2){
-        return "The result is a tie!";    
+        //return "The result is a tie!";
+        console.log("The result is a tie! try again.");
+        callFunctons();
     }else if (choice1 === "rock"){
         if(choice2 === "scissors"){
-            return "rock wins";
+            //return "rock wins";
+            console.log("rock wins");
         }else{
-            return "paper wins";
+            //return "paper wins";
+            console.log("paper wins");
         }
     }else if (choice1 === "paper"){
         if(choice2 === "rock"){
-            return "paper wins";
+            //return "paper wins";
+            console.log("paper wins");
         }else{
-            return "scissors wins";
+            //return "scissors wins";
+            console.log("scissors wins");
         }
     }else if (choice1 === "scissors"){
         if(choice2 === "rock"){
-            return "rock wins";
+            //return "rock wins";
+            console.log("rock wins");
         }else{
-            return "scissors wins";
+            //return "scissors wins";
+            console.log("scissors wins");
         }
     }
 };
 
-compare(userChoice, computerChoice);
+var callFunctons = function () {
+    getInputs();
+    compare(userChoice, computerChoice);
+}
+
+callFunctons();
+
 
 /*
 * consider this choice to continue
