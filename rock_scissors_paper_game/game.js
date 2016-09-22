@@ -2,10 +2,14 @@
 var userChoice = "";
 var computerChoice = "";
 
+
 var getInputs = function(){
-    
+
     userChoice = prompt("Do you choose rock, paper or scissors?");
 
+    // if (userChoice !== "rock" || userChoice !== "scissors" || userChoice !== "paper" ){
+    //     console.log("wrong");
+    // }
     computerChoice = Math.random();
     if (computerChoice < 0.34) {
         computerChoice = "rock";
